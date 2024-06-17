@@ -1,16 +1,10 @@
 package main
 
 import (
-	"log"
 	"net/http"
 )
 
 func handleError(w http.ResponseWriter, status int, message string) {
-	if status > 399 {
-		log.Println("Something went wrong")
-		return
-	}
-
 	type errorMessage struct {
 		Error string `json:"error"`
 	}
